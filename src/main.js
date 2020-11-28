@@ -1,4 +1,4 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
+import Casi from './Casi.vue';
 
-createApp(App).mount('#app')
+createApp(Casi).mount('#root');
