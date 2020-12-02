@@ -183,7 +183,7 @@ export default {
         (this.negation && this.input >= 0 ? "(-" : "") +
         (this.negation && this.input < 0 ? -this.input : this.input) +
         (this.negation && this.input >= 0 ? ")" : "");
-      const x = 34;
+      const x = 26;
       return body.length > x ? body.slice(body.length - x, body.length) : body;
     },
   },
@@ -243,11 +243,16 @@ export default {
 }
 
 /* @font-face {
-  font-family: "Print Char 21";
-  src: url("./assets/PrintChar21.ttf");
+  font-family: "DSEG7 Classic";
+  src: url("./assets/DSEG7Classic-Regular.ttf");
 } */
 
-$bg: #505068;
+@font-face {
+  font-family: "Print Char 21";
+  src: url("./assets/PrintChar21.ttf");
+}
+
+$bg: hsl(230, 12%, 25%);
 $bg--ascent: #181821;
 
 $display-bg: #b2ac7a;
@@ -269,7 +274,7 @@ $sc--light: rgba(255, 255, 255, 0.3);
 
 #casi {
   background-color: $bg;
-  box-shadow: 0 1px 3px $sc--dark, 0 1px 2px $sc--dark,
+  box-shadow: 0 12px 24px $sc--dark, 0 3px 6px $sc--dark,
     0 2px 1px -1px $sc--light inset, 0 -2px 1px -1px $sc--dark inset;
   padding: 1rem;
   border-radius: 9px;
@@ -283,7 +288,7 @@ $sc--light: rgba(255, 255, 255, 0.3);
 }
 
 h1 {
-  color: $button-bg;
+  color: hsl(240, 6%, 62%);
   display: flex;
   justify-content: space-between;
   & > em {
@@ -303,26 +308,27 @@ h1 {
   display: grid;
   justify-items: right;
   grid-gap: 0.5rem;
-  padding: 0.8rem 0.8rem 1rem;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  padding: 0.75rem 0.5rem;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 #input-feedback {
-  font-family: /* "Print Char 21", "IBM Plex Mono", */ monospace;
+  font-family: /* "DSEG7 Classic", */ "Print Char 21", monospace;
+  font-size: 12px;
+  max-width: 26ch;
   text-align: right;
-  width: 34ch;
 }
 
 #output {
-  font-family: "DSEG7 Classic Italic";
+  font-family: "DSEG7 Classic Italic", monospace;
   font-size: 15px;
+  min-width: 23ch;
   text-align: right;
-  width: 25ch;
 }
 
 #buttons-box {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 #number-box {
@@ -333,6 +339,7 @@ h1 {
     "four five six"
     "one two three"
     "neg zero point";
+  margin-right: 0.5rem;
 }
 
 #operator-box {
